@@ -1,5 +1,6 @@
+import 'package:alhly_hospital/core/widget/shared_preferences_utils.dart';
+import 'package:alhly_hospital/features/login_screen/login_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../onboarding_screens/onboarding.dart';
 
 class AnimatedSplash extends StatefulWidget {
@@ -16,6 +17,16 @@ class _AnimatedSplashState extends State<AnimatedSplash> with SingleTickerProvid
   @override
   void initState() {
     super.initState();
+    SharedPreferencesUtils.init().then((_) async {
+      bool isFirstTime = await SharedPreferencesUtils.checkIfFirstTime();
+      Future.delayed(const Duration(seconds: 5), () {
+        if (isFirstTime) {
+          Navigator.pushReplacementNamed(context, OnBoarding.routeName);
+        } else {
+          Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+        }
+      });
+    });
 
     // Initialize the AnimationController
     _controller = AnimationController(
@@ -30,11 +41,6 @@ class _AnimatedSplashState extends State<AnimatedSplash> with SingleTickerProvid
 
     // Start fading out the splash screen
     _controller.forward();
-
-    // Wait for 5 seconds before navigating to another screen
-    Future.delayed(const Duration(seconds: 5), () {
-      Navigator.pushReplacementNamed(context, OnBoarding.routeName);
-    });
   }
 
   @override
@@ -55,7 +61,6 @@ class _AnimatedSplashState extends State<AnimatedSplash> with SingleTickerProvid
               fit: BoxFit.fill,
               width: double.infinity,
               height: double.infinity,
-
             ),
           ),
           Center(

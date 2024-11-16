@@ -18,7 +18,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
       titleSmall:  TextStyle(
         fontSize: 24.sp,
         fontWeight: FontWeight.w500,
-      )
+      ),
+      headlineLarge: TextStyle(
+        fontSize: 32.sp,
+        color: AppColors.greenColor
+      ),
+      headlineMedium: TextStyle(
+          fontSize: 18.sp,
+          color: AppColors.blackColor,
+        fontWeight: FontWeight.w500
+      ),
     )
   );
 }

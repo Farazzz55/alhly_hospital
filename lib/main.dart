@@ -1,4 +1,6 @@
 import 'package:alhly_hospital/core/Theme/my_app_theme.dart';
+import 'package:alhly_hospital/features/login_screen/login_screen.dart';
+import 'package:alhly_hospital/features/signUp_screen/signup_screen.dart';
 import 'package:alhly_hospital/features/splash_screen/animated_spalsh/animated_splash.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -6,12 +8,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'features/onboarding_screens/onboarding.dart';
 
-void main() => runApp(
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(
   DevicePreview(
     enabled: !kReleaseMode,
     builder: (context) => MyApp(),
   ),
-);
+
+);}
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -27,7 +32,9 @@ class MyApp extends StatelessWidget {
         initialRoute: AnimatedSplash.routeName,
         routes: {
          AnimatedSplash.routeName : (context)=> AnimatedSplash(),
-          OnBoarding.routeName :(context) =>OnBoarding()
+          OnBoarding.routeName :(context) =>OnBoarding(),
+          LoginScreen.routeName :(context)=> LoginScreen(),
+          SignUpScreen.routeName : (context)=>SignUpScreen()
         },
        theme: MyAppTheme.lightTheme,
       ),
