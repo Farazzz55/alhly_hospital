@@ -12,7 +12,7 @@ class OnBoardingOne extends StatelessWidget{
          SizedBox(height:75.h,),
          Image.asset('assets/images/chat_bot_logo.png',
          width: 290.w,
-         height: 290.w,),
+         height: 290.h,),
          SizedBox(height: 48.h,),
          Text('Smart Symptom Checker', style: GoogleFonts.inter(
            textStyle: Theme.of(context).textTheme.titleMedium

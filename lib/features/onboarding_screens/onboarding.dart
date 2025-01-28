@@ -1,5 +1,6 @@
 import 'package:alhly_hospital/core/Colors/app_colors.dart';
 import 'package:alhly_hospital/core/widget/button.dart';
+import 'package:alhly_hospital/features/login_screen/login_screen.dart';
 import 'package:alhly_hospital/features/onboarding_screens/onboarding_one.dart';
 import 'package:alhly_hospital/features/onboarding_screens/onboarding_two.dart';
 import 'package:alhly_hospital/features/onboarding_screens/onboarding_three.dart';
@@ -104,7 +105,7 @@ class _OnBoardingState extends State<OnBoarding> {
                     buttonText: 'Get Started',
                     textColor: AppColors.whiteColor,
                     onTap: () {
-                      Navigator.of(context).pushReplacementNamed('/mainScreen');
+                      Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
                     },
                   ),
               ],

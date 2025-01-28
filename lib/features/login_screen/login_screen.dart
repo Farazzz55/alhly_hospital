@@ -1,6 +1,8 @@
 import 'package:alhly_hospital/core/Colors/app_colors.dart';
 import 'package:alhly_hospital/core/widget/button.dart';
 import 'package:alhly_hospital/core/widget/custom_text_from_field.dart';
+import 'package:alhly_hospital/features/home_screen/home_screen.dart';
+import 'package:alhly_hospital/features/main_screen/main_screen.dart';
 import 'package:alhly_hospital/features/signUp_screen/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -85,6 +87,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     SizedBox(height: 20.h,),
                     ButtonWidget(buttonColor: AppColors.greenColor, buttonText: 'Login', textColor: AppColors.whiteColor, onTap: (){
+                      Navigator.pushReplacementNamed(context, MainScreen.routeName);
 
                     }),
                     SizedBox(height: 15.h,),

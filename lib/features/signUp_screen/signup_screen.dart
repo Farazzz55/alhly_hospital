@@ -15,6 +15,7 @@ class SignUpScreen extends StatelessWidget {
   TextEditingController userNameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: SingleChildScrollView(
@@ -69,7 +70,7 @@ class SignUpScreen extends StatelessWidget {
                           Text('UserName',style: GoogleFonts.inter(
                               textStyle: Theme.of(context).textTheme.headlineMedium
                           ),),
-                          CustomTextFormField(hintText: 'Enter your userName ', validator:  (value){
+                          CustomTextFormField(hintText: 'Enter your username ', validator:  (value){
                             return AppValidator.validateUserName(value);
                           },controller: userNameController),
                           SizedBox(height: 15.h,),

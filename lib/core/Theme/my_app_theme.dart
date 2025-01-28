@@ -28,6 +28,45 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
           color: AppColors.blackColor,
         fontWeight: FontWeight.w500
       ),
-    )
+      headlineSmall: TextStyle(
+          fontSize: 18.sp,
+          color: AppColors.greyColor2,
+      ),
+      bodyMedium:  TextStyle(
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w500,
+          color: AppColors.blackColor
+      ),
+      bodyLarge: TextStyle(
+          fontSize: 22.sp,
+          fontWeight: FontWeight.w700,
+          color: AppColors.blackColor
+      ),
+      bodySmall: TextStyle(
+        fontSize: 18.sp,
+        color: AppColors.greenColor,
+        fontWeight: FontWeight.w500
+    ),
+      displayMedium: TextStyle(
+        fontSize: 12.sp,
+        color: AppColors.blackColor,
+        fontWeight: FontWeight.w700
+      ),
+        displaySmall: TextStyle(
+            fontSize: 11.sp,
+            color: AppColors.greyColor2,
+        )
+    ),
+   bottomNavigationBarTheme: BottomNavigationBarThemeData(
+     backgroundColor: Colors.white,
+     unselectedItemColor: AppColors.blackColor,
+     selectedItemColor: AppColors.greenColor,
+     showSelectedLabels: true,
+     showUnselectedLabels: true,
+     selectedLabelStyle: TextStyle(fontSize: 10.sp),
+     unselectedLabelStyle: TextStyle(fontSize: 10.sp),
+     elevation: 0,
+
+   )
   );
 }

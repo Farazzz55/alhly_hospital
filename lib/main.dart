@@ -1,5 +1,6 @@
 import 'package:alhly_hospital/core/Theme/my_app_theme.dart';
 import 'package:alhly_hospital/features/login_screen/login_screen.dart';
+import 'package:alhly_hospital/features/main_screen/main_screen.dart';
 import 'package:alhly_hospital/features/signUp_screen/signup_screen.dart';
 import 'package:alhly_hospital/features/splash_screen/animated_spalsh/animated_splash.dart';
 import 'package:device_preview/device_preview.dart';
@@ -34,7 +35,8 @@ class MyApp extends StatelessWidget {
          AnimatedSplash.routeName : (context)=> AnimatedSplash(),
           OnBoarding.routeName :(context) =>OnBoarding(),
           LoginScreen.routeName :(context)=> LoginScreen(),
-          SignUpScreen.routeName : (context)=>SignUpScreen()
+          SignUpScreen.routeName : (context)=>SignUpScreen(),
+          MainScreen.routeName:(context)=>MainScreen(),
         },
        theme: MyAppTheme.lightTheme,
       ),
