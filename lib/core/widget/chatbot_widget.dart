@@ -1,3 +1,4 @@
+import 'package:alhly_hospital/features/chat_bot_screen/chat_bot_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -55,7 +56,9 @@ class ChatBotWidget extends StatelessWidget{
                     width: 108.w,
                     height: 32.h,
                     color: Colors.transparent,
-                    child: ElevatedButton(onPressed: (){}, child: Text(
+                    child: ElevatedButton(onPressed: (){
+                      Navigator.of(context).pushNamed(ChatBotScreen.routeName);
+                    }, child: Text(
                       'Ask The Bot' , style: GoogleFonts.inter(
                       textStyle: Theme.of(context).textTheme.displaySmall?.copyWith(
                           color: Colors.white

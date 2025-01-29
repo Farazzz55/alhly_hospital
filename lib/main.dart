@@ -1,8 +1,12 @@
 import 'package:alhly_hospital/core/Theme/my_app_theme.dart';
+import 'package:alhly_hospital/features/chat_bot_screen/chat_bot_screen.dart';
 import 'package:alhly_hospital/features/login_screen/login_screen.dart';
 import 'package:alhly_hospital/features/main_screen/main_screen.dart';
 import 'package:alhly_hospital/features/signUp_screen/signup_screen.dart';
 import 'package:alhly_hospital/features/splash_screen/animated_spalsh/animated_splash.dart';
+import 'package:alhly_hospital/features/view_all_departments/specialist/specialist.dart';
+import 'package:alhly_hospital/features/view_all_departments/view_all_departments.dart';
+import 'package:alhly_hospital/features/view_all_doctor/view_all_doctor.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +41,10 @@ class MyApp extends StatelessWidget {
           LoginScreen.routeName :(context)=> LoginScreen(),
           SignUpScreen.routeName : (context)=>SignUpScreen(),
           MainScreen.routeName:(context)=>MainScreen(),
+          ChatBotScreen.routeName:(context)=>ChatBotScreen(),
+          ViewAllDepartments.routeName:(context)=>ViewAllDepartments(),
+          Specialist.routeName:(context)=>Specialist(),
+          ViewAllDoctor.routeName:(context)=>ViewAllDoctor()
         },
        theme: MyAppTheme.lightTheme,
       ),
