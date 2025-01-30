@@ -11,8 +11,8 @@ class ButtonWidget extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 58.h,
-      width: 329.w,
+      height: 48.h,
+      width: 300.w,
       child: ElevatedButton(onPressed:onTap, child: Text(buttonText,
         style: GoogleFonts.inter(
             textStyle: Theme.of(context).textTheme.titleSmall?.copyWith(

@@ -1,6 +1,7 @@
 import 'package:alhly_hospital/core/Theme/my_app_theme.dart';
 import 'package:alhly_hospital/features/chat_bot_screen/chat_bot_screen.dart';
 import 'package:alhly_hospital/features/doctor_details/doctor_details.dart';
+import 'package:alhly_hospital/features/doctor_details/doctor_message/doctor_message.dart';
 import 'package:alhly_hospital/features/login_screen/login_screen.dart';
 import 'package:alhly_hospital/features/main_screen/main_screen.dart';
 import 'package:alhly_hospital/features/signUp_screen/signup_screen.dart';
@@ -46,7 +47,8 @@ class MyApp extends StatelessWidget {
           ViewAllDepartments.routeName:(context)=>ViewAllDepartments(),
           Specialist.routeName:(context)=>Specialist(),
           ViewAllDoctor.routeName:(context)=>ViewAllDoctor(),
-          DoctorDetails.routeName:(context)=>DoctorDetails()
+          DoctorDetails.routeName:(context)=>DoctorDetails(),
+          DoctorMessage.routeName:(context)=>DoctorMessage()
         },
        theme: MyAppTheme.lightTheme,
       ),
