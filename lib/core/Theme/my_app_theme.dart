@@ -55,7 +55,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
         displaySmall: TextStyle(
             fontSize: 11.sp,
             color: AppColors.greyColor2,
-        )
+        ),
+      displayLarge: TextStyle(
+        fontSize: 22.sp,
+        fontWeight: FontWeight.w700,
+        color: AppColors.blackColor
+      )
     ),
    bottomNavigationBarTheme: BottomNavigationBarThemeData(
      backgroundColor: Colors.white,

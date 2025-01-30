@@ -1,4 +1,5 @@
 import 'package:alhly_hospital/core/Colors/app_colors.dart';
+import 'package:alhly_hospital/features/doctor_details/doctor_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,12 +41,19 @@ class ViewAllDoctor extends StatelessWidget{
             ),
             itemCount: doctors.length,
             itemBuilder: (context, index) {
-            return DoctorWidget(
-            drName: doctors[index]['name']!,
-            specialist: doctors[index]['specialist']!,
-            yearsOfExperience: doctors[index]['yearsOfExperience']!,
-            numberOfPatients: doctors[index]['numberOfPatients']!,
-            img: doctors[index]['img']!,);},),),],
+            return InkWell(
+              onTap: (){
+                Navigator.of(context).pushNamed(DoctorDetails.routeName,
+                  arguments: doctors[index], // Pass the selected doctor
+                );
+              },
+              child: DoctorWidget(
+              drName: doctors[index]['name']!,
+              specialist: doctors[index]['specialist']!,
+              yearsOfExperience: doctors[index]['yearsOfExperience']!,
+              numberOfPatients: doctors[index]['numberOfPatients']!,
+              img: doctors[index]['img']!,),
+            );},),),],
             ),),);
   }
 
