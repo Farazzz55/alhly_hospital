@@ -6,7 +6,6 @@ import 'package:alhly_hospital/features/doctor_details/doctor_message/doctor_mes
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'clinics/clinics.dart';
 
 class DoctorDetails extends StatefulWidget {

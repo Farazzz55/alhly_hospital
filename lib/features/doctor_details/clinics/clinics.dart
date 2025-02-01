@@ -1,3 +1,4 @@
+import 'package:alhly_hospital/features/book_an_appointment/book_an_appointment.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -94,7 +95,9 @@ class Clinics extends StatelessWidget{
             ],
           ),
           SizedBox(height: 30.h,),
-          ButtonWidget(buttonColor: AppColors.greenColor, buttonText: 'Book an Appointment ', textColor: Colors.white, onTap: (){})
+          ButtonWidget(buttonColor: AppColors.greenColor, buttonText: 'Book an Appointment ', textColor: Colors.white, onTap: (){
+            Navigator.of(context).pushNamed(BookAnAppointment.routeName);
+          })
 
         ],
       ),
