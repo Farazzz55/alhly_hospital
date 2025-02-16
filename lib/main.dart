@@ -1,4 +1,5 @@
 import 'package:alhly_hospital/core/Theme/my_app_theme.dart';
+import 'package:alhly_hospital/features/appointment_screen/appointment_screen.dart';
 import 'package:alhly_hospital/features/book_an_appointment/book_an_appointment.dart';
 import 'package:alhly_hospital/features/book_an_appointment/confirm_appointment.dart';
 import 'package:alhly_hospital/features/chat_bot_screen/chat_bot_screen.dart';
@@ -6,6 +7,7 @@ import 'package:alhly_hospital/features/doctor_details/doctor_details.dart';
 import 'package:alhly_hospital/features/doctor_details/doctor_message/doctor_message.dart';
 import 'package:alhly_hospital/features/login_screen/login_screen.dart';
 import 'package:alhly_hospital/features/main_screen/main_screen.dart';
+import 'package:alhly_hospital/features/profile_screen/edit_profile_screen/edit_profile_screen.dart';
 import 'package:alhly_hospital/features/signUp_screen/signup_screen.dart';
 import 'package:alhly_hospital/features/splash_screen/animated_spalsh/animated_splash.dart';
 import 'package:alhly_hospital/features/view_all_departments/specialist/specialist.dart';
@@ -53,8 +55,7 @@ class MyApp extends StatelessWidget {
           DoctorMessage.routeName:(context)=>DoctorMessage(),
           BookAnAppointment.routeName:(context)=>BookAnAppointment(),
           ConfirmAppointment.routeName:(context)=>ConfirmAppointment(),
-
-
+          EditProfileScreen.routeName:(context)=>EditProfileScreen()
 
         },
        theme: MyAppTheme.lightTheme,

@@ -3,6 +3,8 @@ import 'package:alhly_hospital/core/widget/category_widget.dart';
 import 'package:alhly_hospital/core/widget/chatbot_widget.dart';
 import 'package:alhly_hospital/core/widget/doctor_widget.dart';
 import 'package:alhly_hospital/core/widget/search_bar_widget.dart';
+import 'package:alhly_hospital/features/doctor_details/doctor_details.dart';
+import 'package:alhly_hospital/features/doctor_details/doctor_model/doctor_model.dart';
 import 'package:alhly_hospital/features/view_all_departments/view_all_departments.dart';
 import 'package:alhly_hospital/features/view_all_doctor/view_all_doctor.dart';
 import 'package:flutter/material.dart';
@@ -13,10 +15,10 @@ class HomeScreen extends StatelessWidget {
   static String routeName = 'HomeScreen';
 
   final List<Map<String, String>> doctors = [
-    {'name': 'Sara Ahmed', 'specialist': 'Nephrology', 'yearsOfExperience': '10', 'numberOfPatients': '500', 'img': 'assets/images/woman_doctor.png'},
-    {'name': 'Jane Smith', 'specialist': 'Nephrology', 'yearsOfExperience': '8', 'numberOfPatients': '400', 'img': 'assets/images/woman_doctor.png'},
-    {'name': 'Emily Davis', 'specialist': 'Nephrology', 'yearsOfExperience': '12', 'numberOfPatients': '600', 'img': 'assets/images/woman_doctor.png'},
-    {'name': 'Michael Brown', 'specialist': 'Nephrology', 'yearsOfExperience': '5', 'numberOfPatients': '300', 'img': 'assets/images/woman_doctor.png'},
+    {'name': 'Sara Ahmed', 'specialist': 'Nephrology', 'yearsOfExperience': '10', 'numberOfPatients': '500', 'img': 'assets/images/Doctor.png'},
+    {'name': 'Jane Smith', 'specialist': 'Nephrology', 'yearsOfExperience': '8', 'numberOfPatients': '400', 'img': 'assets/images/Doctor.png'},
+    {'name': 'Emily Davis', 'specialist': 'Nephrology', 'yearsOfExperience': '12', 'numberOfPatients': '600', 'img': 'assets/images/Doctor.png'},
+    {'name': 'Michael Brown', 'specialist': 'Nephrology', 'yearsOfExperience': '5', 'numberOfPatients': '300', 'img': 'assets/images/Doctor.png'},
   ];
 
   final List<Map<String, String>> departments = [
@@ -136,16 +138,31 @@ class HomeScreen extends StatelessWidget {
                     mainAxisSpacing: 20.h,
                     crossAxisSpacing: 5.w,
                     childAspectRatio: 1.2,
-
                   ),
                   itemCount: doctors.length,
                   itemBuilder: (context, index) {
-                    return DoctorWidget(
-                      drName: doctors[index]['name']!,
-                      specialist: doctors[index]['specialist']!,
-                      yearsOfExperience: doctors[index]['yearsOfExperience']!,
-                      numberOfPatients: doctors[index]['numberOfPatients']!,
-                      img: doctors[index]['img']!,
+                    return InkWell(
+                      onTap: (){
+                        Navigator.of(context).pushNamed(DoctorDetails.routeName,
+                        arguments: DoctorModel(
+                          name: doctors[index]['name']??'null',
+                          specialist:  doctors[index]['specialist']??'null',
+                          yearsOfExperience: doctors[index]['yearsOfExperience']??'null',
+                          numberOfPatients: doctors[index]['numberOfPatients']??'null',
+                          waitingTime: '20',
+                          fees: '200',
+                          doctorImg: doctors[index]['img']??'',
+                         availableTimes: ["09:00 AM", "10:00 AM", "11:00 AM", "01:00 PM", "02:00 PM", "03:00 PM"],
+
+                        ));
+                      },
+                      child: DoctorWidget(
+                        drName: doctors[index]['name']!,
+                        specialist: doctors[index]['specialist']!,
+                        yearsOfExperience: doctors[index]['yearsOfExperience']!,
+                        numberOfPatients: doctors[index]['numberOfPatients']!,
+                        img: doctors[index]['img']!,
+                      ),
                     );
                   },
                 ),
